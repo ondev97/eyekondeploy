@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../assets/css/footer.css";
 import "../assets/css/mediaFiles/footermedia.css";
 import ftimg from "../img/Logo_1.png";
 
 export default function Footer() {
+  let location = useLocation();
+  if (location.pathname === "/") {
+    return "";
+  }
   return (
     <div className="footer_main">
       <div className="footer_mid">
@@ -24,12 +28,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer_column">
-          <h2>Location</h2>
-          <p>
-            No 156/2 2-6, S. De. S. Jayasinghe Mawatha,
-            <br />
-            Kohuwala Road, Nugegoda
-          </p>
+          <h2>Follow Us</h2>
           <ul className="scial">
             <li>
               <i className="fab fa-facebook-square"></i>

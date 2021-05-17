@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-family: "Abhaya Libre", serif;
 }
 .maininde .uppercover .cov_text {
   width: 60%;
@@ -51,19 +52,21 @@
   object-fit: cover;
 }
 .maininde .uppercover .cov_text h1 {
-  font-size: 50px;
+  font-size: 45px;
   color: var(--mainCovHeader);
   margin-bottom: 25px;
+  font-family: "Open Sans", sans-seri;
 }
 .maininde .uppercover .cov_text h1 span {
   font-size: 20px;
   color: black;
 }
 .maininde .uppercover .cov_text p {
-  font-size: 19px;
+  font-size: 21px;
   margin-bottom: 35px;
-  text-align: justify;
-  font-weight: 500;
+  text-align: left;
+  font-weight: 600;
+  width: 70%;
 }
 .maininde .uppercover .cov_text button {
   padding: 12px;
@@ -87,6 +90,16 @@
   margin: -30px auto 30px;
   display: flex;
   flex-wrap: wrap;
+}
+.maininde .uppercover .simple_footer {
+  position: absolute;
+  font-family: "Open Sans", sans-seri;
+  bottom: 35px;
+  font-size: 13px;
+}
+.maininde .uppercover .simple_footer h3 span a {
+  color: var(--h1Fontcolor);
+  text-decoration: none;
 }
 .maininde .cards_section .cards_indi {
   flex: 0.33;

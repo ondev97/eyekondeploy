@@ -8,38 +8,55 @@ import StSignUp from "../pages/StSignUp";
 import StudentDashBoard from "../pages/student/StudentDashBoard";
 import TeacherDashboard from "../pages/TeacherDashboard";
 import PasswordReset from "../pages/PasswordReset";
+import Features from "../pages/Features";
+import Guideline from "../pages/Guideline";
 
 export default [
-    {
-        path:'/',
-        exact:true,
-        components: () =><Home/>
-    },{
+  {
+    path: "/",
+    exact: true,
+    components: () => <Home />,
+  } /*{
         path:'/about',
         components: () =><About/>
     },{
         path:'/contact',
         components: () =><ContactUs/>
-    },{
-        path:'/allteachers',
-        components: () =><IndexAllTeachers/>
-    },{
-        path:'/allsubjects',
-        components: () =><InAllSubjects/>
-    },{
-        path:'/stlogin',
-        components: () =><StLogin/>
-    },{
-        path:'/stsignup',
-        components: () =><StSignUp/>
-    },{
-        path:'/teacherdashboard',
-        components: () => <TeacherDashboard/>
-    },{
-        path:'/studentdashboard',
-        components:()=> <StudentDashBoard/>
-    },{
-        path:'/passwordreset',
-        components:()=> <PasswordReset/>
-    }
-]
+    },*/,
+  {
+    path: "/feachers",
+    components: () => <Features />,
+  },
+  {
+    path: "/guideline",
+    components: () => <Guideline />,
+  },
+  {
+    path: "/allteachers",
+    components: () => <IndexAllTeachers />,
+  },
+  {
+    path: "/allsubjects",
+    components: () => <InAllSubjects />,
+  },
+  {
+    path: "/stlogin",
+    components: () => <StLogin />,
+  },
+  {
+    path: "/stsignup",
+    components: () => <StSignUp />,
+  },
+  {
+    path: "/teacherdashboard",
+    components: () => <TeacherDashboard />,
+  },
+  {
+    path: "/studentdashboard",
+    components: () => <StudentDashBoard />,
+  },
+  {
+    path: "/passwordreset",
+    components: () => <PasswordReset />,
+  },
+];

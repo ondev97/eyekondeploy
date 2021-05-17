@@ -1,55 +1,78 @@
-import React, {useEffect, useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {activeAccount} from '../actions'
-import { loadStDetails } from '../actions/stDetailsAction';
-import cov from '../img/cover.jpg';
-import instructor from '../img/svg/instructor.svg';
-import learning from '../img/svg/learning.svg';
-import support from '../img/svg/support.svg';
-import pencil from '../img/svg/pencil.svg';
-import video from '../img/svg/video.svg';
-import contract from '../img/svg/contract.svg';
-import get from '../img/get.jpg';
-import '../assets/css/home.css';
-import '../assets/css/mediaFiles/homemedia.css';
-import {Link} from "react-router-dom";
-import AllSubCard from "../components/AllSubCard";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { activeAccount } from "../actions";
+import { loadStDetails } from "../actions/stDetailsAction";
+import cov from "../img/cover.jpg";
+// import instructor from "../img/svg/instructor.svg";
+// import learning from "../img/svg/learning.svg";
+// import support from "../img/svg/support.svg";
+// import pencil from "../img/svg/pencil.svg";
+// import video from "../img/svg/video.svg";
+// import contract from "../img/svg/contract.svg";
+// import get from "../img/get.jpg";
+import "../assets/css/home.css";
+import "../assets/css/mediaFiles/homemedia.css";
+import { Link } from "react-router-dom";
+// import AllSubCard from "../components/AllSubCard";
 import Axios from "axios";
 
 export default function Home() {
-    const dispatch = useDispatch();
-    const [allSubDetails, setallSubDetails] = useState([])
-    const [statistics, setstatistics] = useState({'students':0, 'courses':0, 'teachers':0, 'subjects':0})
+  const dispatch = useDispatch();
+  const [allSubDetails, setallSubDetails] = useState([]);
+  const [statistics, setstatistics] = useState({
+    students: 0,
+    courses: 0,
+    teachers: 0,
+    subjects: 0,
+  });
 
-    useEffect(() => {
-        dispatch(activeAccount());
-        dispatch(loadStDetails());
-        Axios.get(`${process.env.REACT_APP_LMS_MAIN_URL}/course-api/latestsub/`).then(res=>{
-                setallSubDetails([...res.data])
-            }).catch(err=>{
+  useEffect(() => {
+    dispatch(activeAccount());
+    dispatch(loadStDetails());
+    Axios.get(`${process.env.REACT_APP_LMS_MAIN_URL}/course-api/latestsub/`)
+      .then((res) => {
+        setallSubDetails([...res.data]);
+      })
+      .catch((err) => {});
+    Axios.get(`${process.env.REACT_APP_LMS_MAIN_URL}/course-api/stat/`)
+      .then((res) => {
+        setstatistics(res.data);
+      })
+      .catch((err) => {});
+    window.scrollTo(0, 0);
+  }, [dispatch]);
 
-            });
-        Axios.get(`${process.env.REACT_APP_LMS_MAIN_URL}/course-api/stat/`).then(res=>{
-                setstatistics(res.data)
-            }).catch(err=>{
-
-            });
-        window.scrollTo(0, 0);
-      },[dispatch])
-
-    return (
-        <div className='maininde'>
-            <div className="uppercover">
-                <div className="cov_text">
-                    <h1>Eyekon eClass For <br/>Learning</h1>
-                    <p>Education is the most powerful weapon which you can <br/> use to change the world</p>
-                    <Link to={'/allteachers'}><button>Our Teachers</button></Link>
-                </div>
-                <div className="cov_img">
-                    <img src={cov} alt="image"/>
-                </div>
-            </div>
-            <div className="cards_section">
+  return (
+    <div className="maininde">
+      <div className="uppercover">
+        <div className="cov_text">
+          <h1>Eyekon eClass</h1>
+          <p>
+            ශ්‍රී ලාංකීය දු දරුවන්ගේ අධ්‍යාපනය වෙනුවෙන් නිරතුරුවම කැපවුන
+            ජාතිකපාසල හරහා ඔබගේ විෂයට අදාල ලංකාවේ ප්‍රවීන ගුරුවරුන් සමග සම්බන්ද
+            වෙමින් නිවසේ සිට සුරක්ෂිතව අධ්‍යාපන කටයුතු සිදු කරන්න.
+          </p>
+          <Link to={"#"}>
+            <button>Guidelines</button>
+          </Link>
+          <div className="simple_footer">
+            <h3>
+              COPYRIGHT © JATHIKAPASALA | PROUDLY POWERED BY
+              <span>
+                {
+                  <Link to="//helamid.com" target="_blank">
+                    &nbsp;HELAMID
+                  </Link>
+                }
+              </span>
+            </h3>
+          </div>
+        </div>
+        <div className="cov_img">
+          <img src={cov} alt="image" />
+        </div>
+      </div>
+      {/* <div className="cards_section">
                 <div className="cards_indi">
                     <div className="card_ic">
                         <img src={instructor} alt="instructor"/>
@@ -149,7 +172,7 @@ export default function Home() {
                         <img src={get} alt="get"/>
                     </div>
                 </div>
-            </div>
-        </div>
-    )
+            </div> */}
+    </div>
+  );
 }
