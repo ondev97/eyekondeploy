@@ -56,10 +56,13 @@
   color: var(--mainCovHeader);
   margin-bottom: 25px;
   font-family: "Open Sans", sans-seri;
+  line-height: 50px;
 }
 .maininde .uppercover .cov_text h1 span {
-  font-size: 20px;
+  font-size: 35px;
   color: black;
+  font-family: "Abhaya Libre", serif;
+  line-height: 0;
 }
 .maininde .uppercover .cov_text p {
   font-size: 21px;

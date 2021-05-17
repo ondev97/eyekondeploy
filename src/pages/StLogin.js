@@ -22,8 +22,8 @@ export default function StLogin() {
             <div className="topSign">
               <h2>Login</h2>
               <p>
-                Access the Eyekon eClass Dashboard using your Username (Class
-                Number) and Password.
+                ශිෂ්‍ය ගිණුමට ප්‍රවේශ වීමට ඔබගේ Username (Class Number) සහ
+                Password නිවැරදිව සදහන් කර "Log In" මත click කරන්න.
               </p>
             </div>
             <StLoginForm />
@@ -35,17 +35,17 @@ export default function StLogin() {
           </div>
           <div className="image_content">
             <h3>
-              Eyekon eClass provides facilities in a higher manner to the Sri
-              Lankan educational sector. All the courses are being conducted by
-              leading and fully qualified panel of teachers in the Island. With
-              the direct guidance of the teachers, students follow their
-              syllabus. At Eyekon eClass, conduct online examinations and will
-              be assessed the student’s progress accordingly.
+              Eyekon eClass Student Account සදහා Log වීමට ප්‍රථම ඔබ Eyekon
+              eClass හි ලියාපදිංචි විය යුතුය. ඒ සදහා ඔබගේ අනන්‍යතාවය ගුරුවරයා
+              වෙත තහවුරු කර ඔබගේ student account සදහා අදාල Username සහ Password
+              ලබාගන්න. Eyekon eClass Student Accounts හි කුමන හෝ තාක්ෂණික
+              ගැටළුවක් පවතීනම් එය නිරාකරණය කරගැනීම සදහා ඔබගේ ගුරුවරයා සම්බන්ද
+              කරගන්න.
             </h3>
           </div>
         </div>
       </div>
-      <div className="ins-cont">
+      {/* <div className="ins-cont">
         <h3>
           Eyekon eClass සදහා log වීමේදී "Unable to log in with provided
           credentials" ලෙස error message එකක් පැමිණීම.
@@ -91,7 +91,7 @@ export default function StLogin() {
           student account සදහා log වීමට භාවිත කල යුත්තේ එම නව මුරපදයයි (new
           password).
         </p>
-      </div>
+      </div> */}
     </>
   );
 }

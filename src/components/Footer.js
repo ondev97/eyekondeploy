@@ -18,12 +18,9 @@ export default function Footer() {
           </div>
           <div className="ab">
             <p>
-              'Eyekoneclass.lk' provides facilities in a higher manner to the
-              Sri Lankan educational sector. All the courses are being conducted
-              by leading and fully qualified panel of teachers in the Island.
-              With the direct guidance of the teachers, students follow their
-              syllabus. At 'eyekoneclass.lk', conduct online examinations and
-              will be assessed the student’s progress accordingly.
+              ශ්‍රී ලාංකීය දු දරුවන්ගේ අධ්‍යාපනය වෙනුවෙන් නිරතුරුවම කැපවුන
+              Eyekon eClass හරහා ඔබගේ විෂයට අදාල ලංකාවේ ප්‍රවීන ගුරුවරුන් සමග
+              සම්බන්ද වෙමින් නිවසේ සිට සුරක්ෂිතව අධ්‍යාපන කටයුතු සිදු කරන්න.
             </p>
           </div>
         </div>
@@ -48,10 +45,10 @@ export default function Footer() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="#">Guidelines</Link>
             </li>
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="#">Our Features</Link>
             </li>
             <li>
               <Link to="/allteachers">Teachers</Link>

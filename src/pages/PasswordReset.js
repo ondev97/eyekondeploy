@@ -80,7 +80,10 @@ export default function PasswordReset() {
         <div className="login_form" style={{ padding: "25px 0" }}>
           <div className="topSign">
             <h2>Password Reset</h2>
-            <p>Reset Your Password using your Email</p>
+            <p>
+              Password Reset කිරීම සදහා ඔබගේ Student Account සාදා ඇති Email
+              ලිපිනය නිවැරදිව ඇතුලත් කරන්න.
+            </p>
           </div>
           <form>
             <p>
@@ -114,9 +117,11 @@ export default function PasswordReset() {
         </div>
         <div className="image_content">
           <h3>
-            “Anyone who has never made a mistake has never tried anything new.”
-            <br />
-            <b>Albert Einstein</b>
+            ජාතිකපාසල Student Account සදහා Log වීමට ප්‍රථම ඔබ ජාතිකපාසල හි
+            ලියාපදිංචි විය යුතුය. ඒ සදහා ඔබගේ අනන්‍යතාවය ගුරුවරයා වෙත තහවුරු කර
+            ඔබගේ student account සදහා අදාල Username සහ Password ලබාගන්න.
+            ජාතිකපාසල Student Accounts හි කුමන හෝ තාක්ෂණික ගැටළුවක් පවතීනම් එය
+            නිරාකරණය කරගැනීම සදහා ඔබගේ ගුරුවරයා සම්බන්ද කරගන්න.
           </h3>
         </div>
       </div>

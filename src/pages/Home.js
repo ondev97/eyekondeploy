@@ -46,10 +46,13 @@ export default function Home() {
     <div className="maininde">
       <div className="uppercover">
         <div className="cov_text">
-          <h1>Eyekon eClass</h1>
+          <h1>
+            Eyekon eClass <br />
+            <span>වෙතින් ශ්‍රී ලාංකීය දූ දරුවන් වෙත සෙනෙහසින්</span>
+          </h1>
           <p>
-            ශ්‍රී ලාංකීය දු දරුවන්ගේ අධ්‍යාපනය වෙනුවෙන් නිරතුරුවම කැපවුන
-            ජාතිකපාසල හරහා ඔබගේ විෂයට අදාල ලංකාවේ ප්‍රවීන ගුරුවරුන් සමග සම්බන්ද
+            ශ්‍රී ලාංකීය දු දරුවන්ගේ අධ්‍යාපනය වෙනුවෙන් නිරතුරුවම කැපවුන Eyekon
+            eClass හරහා ඔබගේ විෂයට අදාල ලංකාවේ ප්‍රවීන ගුරුවරුන් සමග සම්බන්ද
             වෙමින් නිවසේ සිට සුරක්ෂිතව අධ්‍යාපන කටයුතු සිදු කරන්න.
           </p>
           <Link to={"#"}>
@@ -57,7 +60,7 @@ export default function Home() {
           </Link>
           <div className="simple_footer">
             <h3>
-              COPYRIGHT © JATHIKAPASALA | PROUDLY POWERED BY
+              COPYRIGHT © EYEKON INSTITUTE | PROUDLY POWERED BY
               <span>
                 {
                   <Link to="//helamid.com" target="_blank">
