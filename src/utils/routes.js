@@ -25,7 +25,7 @@ export default [
         components: () =><ContactUs/>
     },*/,
   {
-    path: "/feachers",
+    path: "/features",
     components: () => <Features />,
   },
   {

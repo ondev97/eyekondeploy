@@ -1,14 +1,14 @@
 .maininde .upper_cover {
   width: 100%;
   padding: 60px 20px;
-  background-image: linear-gradient(to top, #f6f6f6, #fff, #fff);
+  background-image: linear-gradient(to top, #fdfdfd, #fff, #fff);
   font-family: "Open Sans", sans-seri;
   text-align: center;
 }
 .maininde .upper_cover h1 {
   font-size: 35px;
   font-weight: 600;
-  color: #ff9d00;
+  color: #404040;
 }
 .maininde .body_sec {
   font-family: "Open Sans", sans-seri;
@@ -47,6 +47,11 @@
     width: 100% !important;
   }
 }
+@media screen and (max-width: 800px) {
+  .maininde .inde_counter .main_inde_counter .wr {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 670px) {
   .maininde .body_sec {
     flex-direction: column;
@@ -62,14 +67,10 @@
     order: 1;
   }
   .maininde .inde_counter .main_inde_counter .wr {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 550px) {
-  .maininde .inde_counter .main_inde_counter .wr {
     display: block !important;
   }
   .maininde .inde_counter .main_inde_counter .counter_colu {
+    margin-right: 0 !important;
     margin-bottom: 15px;
   }
 }

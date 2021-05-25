@@ -97,8 +97,11 @@
 .maininde .uppercover .simple_footer {
   position: absolute;
   font-family: "Open Sans", sans-seri;
-  bottom: 35px;
+  bottom: 20px;
   font-size: 13px;
+}
+.maininde .uppercover .simple_footer h3 {
+  color: #5c5c5c;
 }
 .maininde .uppercover .simple_footer h3 span a {
   color: var(--h1Fontcolor);
@@ -385,7 +388,7 @@
 
 /*Counter*/
 .maininde .inde_counter {
-  padding: 45px 0;
+  padding: 55px 0;
 }
 .maininde .inde_counter h1 {
   font-size: 22px;
@@ -398,21 +401,49 @@
   margin: 0 auto;
 }
 .maininde .inde_counter .main_inde_counter .wr {
-  padding: 45px 0 35px;
+  padding: 40px 0 35px;
   display: flex;
   justify-content: space-evenly;
 }
 .maininde .inde_counter .main_inde_counter .counter_colu {
   flex: 0.33;
+  padding: 25px 0;
+  margin-right: 28px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
   text-align: center;
+  background-color: #fbfbfb;
 }
 .maininde .inde_counter .main_inde_counter .counter_colu h3 {
   font-size: 40px;
-  color: var(--h1Fontcolor);
+  color: #808080;
+}
+.maininde .inde_counter .main_inde_counter .counter_colu:last-child {
+  margin-right: 0;
 }
 .maininde .inde_counter .main_inde_counter .counter_colu h2 {
-  margin-bottom: 3px;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+/*Line*/
+.line {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line h1 {
+  width: 70%;
+  background-color: #f5f5f5;
+  padding: 25px 0;
+  font-size: 34px;
+  color: #000;
+  font-family: "Abhaya Libre", serif;
+}
+.line h1 span {
+  font-family: "Open Sans", sans-seri;
+  font-size: 20px;
 }
 
 /*get start*/

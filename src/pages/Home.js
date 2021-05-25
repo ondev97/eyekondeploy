@@ -3,6 +3,10 @@ import { useDispatch } from "react-redux";
 import { activeAccount } from "../actions";
 import { loadStDetails } from "../actions/stDetailsAction";
 import cov from "../img/cover.jpg";
+import features1 from "../img/features/1.png";
+import features2 from "../img/features/2.png";
+import features3 from "../img/features/3.png";
+import features4 from "../img/features/4.png";
 // import instructor from "../img/svg/instructor.svg";
 // import learning from "../img/svg/learning.svg";
 // import support from "../img/svg/support.svg";
@@ -15,6 +19,7 @@ import "../assets/css/mediaFiles/homemedia.css";
 import { Link } from "react-router-dom";
 // import AllSubCard from "../components/AllSubCard";
 import Axios from "axios";
+import FeaturesBox from "../components/FeaturesBox";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -116,29 +121,60 @@ export default function Home() {
                 <h1>You can be your own guiding star with our help!</h1>
                 <button>Get Started</button>
             </div>
-            <div className="inde_counter">
-                <div className="main_inde_counter">
-                <h1>Teachers open the door, but you must enter by yourself</h1>
-                    <div className="wr">
-                        <div className="counter_colu">
-                            <h2>Students</h2>
-                            <h3>{statistics.students}+</h3>
-                        </div>
-                        <div className="counter_colu">
-                            <h2>Subjects</h2>
-                            <h3>{statistics.subjects}+</h3>
-                        </div>
-                        <div className="counter_colu">
-                            <h2>Instructors</h2>
-                            <h3>{statistics.teachers}+</h3>
-                        </div>
-                        <div className="counter_colu">
-                            <h2>Courses</h2>
-                            <h3>{statistics.courses}+</h3>
-                        </div>
-                    </div>
-                </div>
+                      */}
+      <div className="inde_counter">
+        <div className="main_inde_counter">
+          <div className="wr">
+            <div className="counter_colu">
+              <h2>Students</h2>
+              <h3>{statistics.students}+</h3>
             </div>
+            <div className="counter_colu">
+              <h2>Subjects</h2>
+              <h3>{statistics.subjects}+</h3>
+            </div>
+            <div className="counter_colu">
+              <h2>Instructors</h2>
+              <h3>{statistics.teachers}+</h3>
+            </div>
+            <div className="counter_colu">
+              <h2>Courses</h2>
+              <h3>{statistics.courses}+</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Features */}
+      <div className="line">
+        <h1>
+          ඔබ Eyekon eClass තෝරාගත යුත්තේ ඇයි?
+          <br />
+          <span>Why do you choose Eyekon eClass?</span>
+        </h1>
+      </div>
+      <div className="features-container">
+        <FeaturesBox
+          image={features1}
+          heading="Live Streaming"
+          para="සිසුන්ට වෙබ් අඩවිය හරහා Live Classes සදහා සම්බන්ද විය හැක. ගුරුවරයාට සිසුවා සමග සම්බන්ද වෙමින් ඉගැන්වීම් කටයුතු සිදු කල හැකි අතර මෙය සිසුන්ට සජීවී පන්ති කාමරයක අත්දැකීම සමීප කරවයි."
+        />
+        <FeaturesBox
+          image={features2}
+          heading="Video Embedded"
+          para="Live Classes සදහා සම්බන්ද විය නොහැකි සිසුන් වෙනුවෙන් ඔබගේ ගුරුවරයා පාඩම්මාලා සදහා අදාළ සියලු recording videos වෙබ් අඩවියට upload කර තබනු ලැබේ. සිසුන්ට එය තමන්ට පහසු වේලාවක අධ්‍යනය කල හැක."
+        />
+        <FeaturesBox
+          image={features3}
+          heading="Content Privacy Protection"
+          para="ගුරුවරුන් විසින් වෙබ් අඩවිය සදහා එක් කරනු ලබන සියලු අන්තර්ගතයන් (video contents) සුරක්ෂිත වේ. සිසුන්ට හෝ වෙන කිසිදු තෙවන පාර්ශවයකට එය කිසිලෙසක share කිරීමට හෝ download කිරීමට නොහැක."
+        />
+        <FeaturesBox
+          image={features4}
+          heading="Login Sessions"
+          para="සිසුන්ට කිසිවිටෙක තමන්ගේ ශිෂ්‍ය ගිණුම (student account) තවත් සිසුන් අතරේ හුවමාරු කරගෙන භාවිතා කල නොහැක. එලෙස හුවමාරු කරගෙන භාවිතා කළහොත් එම student account ස්වයන්ක්‍රියව අක්‍රිය (block) වීම සිදුවේ."
+        />
+      </div>
+      {/*
             <div className="get_start_sec">
                 <div className="main_get_start">
                     <div className="get_start_column">
