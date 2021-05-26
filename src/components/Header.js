@@ -160,10 +160,10 @@ export default function Header({ acDetails }) {
                                 </li>
                             </Link> */}
 
-                <Link to="/#">
+                <Link to="/guideline">
                   <li>GUIDELINES</li>
                 </Link>
-                <Link to="/#">
+                <Link to="/features">
                   <li>FEATURES</li>
                 </Link>
                 <Link to="/allteachers">
