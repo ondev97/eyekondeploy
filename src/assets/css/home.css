@@ -415,7 +415,7 @@
   background-color: #fbfbfb;
 }
 .maininde .inde_counter .main_inde_counter .counter_colu h3 {
-  font-size: 40px;
+  font-size: 36px;
   color: #808080;
 }
 .maininde .inde_counter .main_inde_counter .counter_colu:last-child {
@@ -423,7 +423,7 @@
 }
 .maininde .inde_counter .main_inde_counter .counter_colu h2 {
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 22px;
 }
 /*Line*/
 .line {
@@ -437,8 +437,9 @@
   width: 70%;
   background-color: #f5f5f5;
   padding: 25px 0;
-  font-size: 34px;
+  font-size: 32px;
   color: #000;
+  border-radius: 15px;
   font-family: "Abhaya Libre", serif;
 }
 .line h1 span {

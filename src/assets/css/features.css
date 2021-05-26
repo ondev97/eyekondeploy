@@ -16,8 +16,8 @@
   margin-bottom: 50px;
 }
 .outer-box .small-box {
-  max-width: 150px;
-  height: 150px;
+  max-width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,14 +33,14 @@
 }
 .outer-box .length-box {
   max-width: 900px;
-  min-height: 220px;
-  padding: 45px 20px 45px 100px;
+  min-height: 180px;
+  padding: 35px 20px 35px 100px;
   border-radius: 24px;
 }
 .outer-box .length-box h1 {
   position: relative;
   margin-bottom: 20px;
-  font-size: 25px;
+  font-size: 22px;
 }
 .outer-box .length-box h1:after {
   content: "";
@@ -76,7 +76,7 @@
 }
 .outer-box .length-box p {
   font-family: "Abhaya Libre", serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 @media screen and (max-width: 1200px) {
   .outer-box {

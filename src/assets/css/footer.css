@@ -44,8 +44,9 @@
   color: #777;
 }
 .footer_main .footer_mid .footer_column .ab p {
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
+  font-family: "Abhaya Libre", serif;
 }
 .footer_main .footer_mid .footer_column h2 {
   font-size: 20px;

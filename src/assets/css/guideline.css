@@ -4,19 +4,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .main-box-outer .main-box {
-  max-width: 1000px;
-  padding: 50px;
+  width: 1000px;
+  padding: 25px 50px;
   border: 1px solid #f9f9f9;
   background-color: #f9f9f9;
   border-radius: 5px;
+  margin-bottom: 8px;
   font-family: "Abhaya Libre", serif;
+}
+.main-box-outer .main-box.lang {
+  font-family: "Open Sans", sans-serif;
 }
 .main-box-outer .main-box h2 {
   position: relative;
   font-size: 25px;
   margin-bottom: 30px;
+}
+.main-box-outer .main-box.lang h2 {
+  font-size: 24px;
 }
 .main-box-outer .main-box h2::after {
   content: "";
@@ -31,4 +39,15 @@
   margin-bottom: 15px;
   font-size: 20px;
   line-height: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-box-outer .main-box {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 340px) {
+  .main-box-outer .main-box h2::after {
+    width: 120px;
+  }
 }
