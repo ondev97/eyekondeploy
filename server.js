@@ -42,7 +42,10 @@ app.use(express.static("public"));
 app.post("/uploads", function (request, response, next) {
   upload(request, response, function (error) {
     if (error) {
-      return console.log(error);
+        return response.status(400).json({
+            uploaded: false,
+            message: error.originalError.message,
+        });
     }
     response.status(200).json({
       uploaded: true,
