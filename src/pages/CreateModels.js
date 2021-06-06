@@ -200,7 +200,7 @@ function CreateModels() {
               onChange={editorOnChangeHandel}
               config={{
                 ckfinder: {
-                  uploadUrl: "http://localhost:8080/uploads",
+                  uploadUrl: "https://eyekoneclass.lk/uploads",
                 },
               }}
             />
