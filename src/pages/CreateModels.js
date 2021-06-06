@@ -7,6 +7,7 @@ import ThreeStepSection from '../components/ThreeStepSection';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import checkErrors from '../components/ValidateModule';
+// import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 
 function CreateModels() {
 
@@ -93,20 +94,20 @@ function CreateModels() {
         }).then(res=>{
             if(res.data.id && mediafiles.length!==0){
                 Axios.post(`${process.env.REACT_APP_LMS_MAIN_URL}/course-api/createmodulefile/${res.data.id}/`,fileData,{
-                   headers:{Authorization:"Token "+usDetails.key},onUploadProgress:progressEvent=>{
-                       if(progressEvent.isTrusted){
-                           setuploading(true);
-                           setprogressBarPrecen(
-                               parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total))
+                    headers:{Authorization:"Token "+usDetails.key},onUploadProgress:progressEvent=>{
+                        if(progressEvent.isTrusted){
+                            setuploading(true);
+                            setprogressBarPrecen(
+                                parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total))
                             )
-                       }
-                   }
-               }).then(()=>{
+                        }
+                    }
+                }).then(()=>{
                     setuploading(false);
                     setmediafiles(null);
                     setsucMsg(true)
                     setformValues({mn:"",msg:""});
-               })
+                })
             }
             else{
                 setsucMsg(true);
@@ -115,7 +116,7 @@ function CreateModels() {
 
         })
     }
-    
+
     if(sucMsg){
         setsucMsg(false);
         setisRedirect(true);
@@ -129,10 +130,10 @@ function CreateModels() {
             animationIn: ["animate__animated", "animate__fadeIn"],
             animationOut: ["animate__animated", "animate__fadeOut"],
             dismiss: {
-            duration: 3000,
-            onScreen: true,
-            pauseOnHover: true,
-            showIcon:true
+                duration: 3000,
+                onScreen: true,
+                pauseOnHover: true,
+                showIcon:true
             },
             width:600
         });
@@ -166,22 +167,30 @@ function CreateModels() {
                     <p>
                         <label htmlFor="msg">Messages/Links</label>
                     </p>
-                        <div className="editorck">
-                            <CKEditor editor={ ClassicEditor } data={formValues.msg} onChange={editorOnChangeHandel} />
-                        </div>
-                        {
-                            mediafiles !== null ? 
+                    <div className="editorck">
+                        <CKEditor editor={ ClassicEditor } data={formValues.msg} onChange={editorOnChangeHandel}
+                                  config={
+                                      {
+                                          ckfinder: {
+                                              uploadUrl: 'http://localhost:8000/uploads'
+                                          }
+                                      }
+                                  }
+                        />
+                    </div>
+                    {
+                        mediafiles !== null ?
                             <div className="show_files">
-                            <ul className="up_list">
-                                {
-                                    Object.values(mediafiles).map((value,index)=>(
-                                        value.type !== 'video/mp4' && <li key={index} className="row"><span><i className="far fa-circle"></i>{value.name}</span><i className={`fas fa-circle-notch ${uploading ? 'rot' : 'dis'} `}></i></li>
-                                    ))
-                                }
-                            </ul>
+                                <ul className="up_list">
+                                    {
+                                        Object.values(mediafiles).map((value,index)=>(
+                                            value.type !== 'video/mp4' && <li key={index} className="row"><span><i className="far fa-circle"></i>{value.name}</span><i className={`fas fa-circle-notch ${uploading ? 'rot' : 'dis'} `}></i></li>
+                                        ))
+                                    }
+                                </ul>
                             </div>
                             :''
-                        }
+                    }
                     <div className="multi_files">
                         {
                             !uploading ?
@@ -190,9 +199,9 @@ function CreateModels() {
                                     <input type="file" name="file" className="multi" id="fl" multiple onChange={files}/>
                                 </p>
 
-                            : <div className="progressPath">
-                                <div className="progressBar" style={{width:`${progressBarPrecen}%`}}></div>
-                            </div>
+                                : <div className="progressPath">
+                                    <div className="progressBar" style={{width:`${progressBarPrecen}%`}}></div>
+                                </div>
                         }
                     </div>
                     <p>

@@ -221,7 +221,15 @@ export default function UpdateModule() {
                         <label htmlFor="msg">Messages/Links</label>
                     </p>
                         <div className="editorck">
-                            <CKEditor editor={ ClassicEditor } data={formValues.msg} onChange={editorOnChangeHandel} />
+                            <CKEditor editor={ ClassicEditor } data={formValues.msg} onChange={editorOnChangeHandel}
+                                config={
+                                      {
+                                          ckfinder: {
+                                              uploadUrl: 'http://localhost:8000/uploads'
+                                          }
+                                      }
+                                  }
+                            />
                         </div>
                         {
                             mediafiles !== null && newmediafiles !== null ? 
