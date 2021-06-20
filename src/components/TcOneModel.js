@@ -102,48 +102,53 @@ export default function TcOneModel({
             media = [...media, nodes[i]];
           }
         } else {
-          if (nodes[i].props.children) {
-            for (let p = 0; p < nodes[i].props.children.length; p++) {
-              if (nodes[i].props.children[p].type === "a") {
-                if (
-                  youtubeRegular.test(nodes[i].props.children[p].props.href)
-                ) {
-                  media.push(
-                    <div className="button-row" key={i}>
-                      <button className="youtube">
-                        <a
-                          href={nodes[i].props.children[p].props.href}
-                          target="__block"
-                        >
-                          <i className="fab fa-youtube"></i>
-                          Join YouTube Live Class
-                        </a>
-                      </button>
-                    </div>
-                  );
-                } else if (
-                  nodes[i].props.children[p].props.href.includes("zoom.us")
-                ) {
-                  media.push(
-                    <div className="button-row" key={i}>
-                      <button className="zoom">
-                        <a
-                          href={nodes[i].props.children[p].props.href}
-                          target="__block"
-                        >
-                          <i className="fas fa-graduation-cap"></i>
-                          Join Zoom Live Class
-                        </a>
-                      </button>
-                    </div>
-                  );
+          console.log(nodes[i]);
+          if (nodes[i].props) {
+            if (nodes[i].props.children) {
+              for (let p = 0; p < nodes[i].props.children.length; p++) {
+                if (nodes[i].props.children[p].type === "a") {
+                  if (
+                    youtubeRegular.test(nodes[i].props.children[p].props.href)
+                  ) {
+                    media.push(
+                      <div className="button-row" key={i}>
+                        <button className="youtube">
+                          <a
+                            href={nodes[i].props.children[p].props.href}
+                            target="__block"
+                          >
+                            <i className="fab fa-youtube"></i>
+                            Join YouTube Live Class
+                          </a>
+                        </button>
+                      </div>
+                    );
+                  } else if (
+                    nodes[i].props.children[p].props.href.includes("zoom.us")
+                  ) {
+                    media.push(
+                      <div className="button-row" key={i}>
+                        <button className="zoom">
+                          <a
+                            href={nodes[i].props.children[p].props.href}
+                            target="__block"
+                          >
+                            <i className="fas fa-graduation-cap"></i>
+                            Join Zoom Live Class
+                          </a>
+                        </button>
+                      </div>
+                    );
+                  } else {
+                    media = [...media, nodes[i]];
+                  }
                 } else {
                   media = [...media, nodes[i]];
+                  break;
                 }
-              } else {
-                media = [...media, nodes[i]];
-                break;
               }
+            } else {
+              media = [...media, nodes[i]];
             }
           } else {
             media = [...media, nodes[i]];
