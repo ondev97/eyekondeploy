@@ -58,6 +58,7 @@ export default function Stmodules() {
           setredirect(true);
         });
     }
+    window.scrollTo(0, 0);
   }, [usDetails]);
 
   useEffect(() => {
