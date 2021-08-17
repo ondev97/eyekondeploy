@@ -226,6 +226,12 @@
 .st_top_manage_body
   .st_mange_cos_body
   .st_manage_course_grid
+  .st_grid_card_manage.hidecard {
+  display: none;
+}
+.st_top_manage_body
+  .st_mange_cos_body
+  .st_manage_course_grid
   .st_grid_card_manage
   .st_grid_card_mg_head
   img {

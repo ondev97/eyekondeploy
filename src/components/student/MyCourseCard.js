@@ -15,13 +15,8 @@ export default function MyCourseCard({
   payment,
 }) {
   return (
-    <Link to={is_freeze ? `#` : `/studentdashboard/stmodules/${courseid}/`}>
-      <div
-        className={
-          is_freeze ? `st_grid_card_manage freezeCard` : `st_grid_card_manage`
-        }
-        style={{ height: "340px" }}
-      >
+    <Link to={`/studentdashboard/stmodules/${courseid}/`}>
+      <div className={`st_grid_card_manage`} style={{ height: "340px" }}>
         <div className="st_grid_card_mg_head">
           <LazyLoadImage
             effect="blur"
@@ -59,7 +54,7 @@ export default function MyCourseCard({
           ) : (
             ""
           )}
-          {is_freeze ? <p className="freezep">Course freezed</p> : ""}
+          {/* {is_freeze ? <p className="freezep">Course freezed</p> : ""} */}
           <div className="cs_st_tail">
             <h4 align={"right"}>
               <ReactTimeAgo date={Date.parse(created_at)} locale="en-US" />

@@ -178,7 +178,7 @@ export default function CourseCard({
       </AnimatePresence>
       <div
         className={
-          is_freeze ? "st_grid_card_manage freezeCard" : "st_grid_card_manage"
+          is_freeze ? "st_grid_card_manage hidecard" : "st_grid_card_manage"
         }
       >
         <Link to={`#`}>
