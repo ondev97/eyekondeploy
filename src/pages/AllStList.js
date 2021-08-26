@@ -7,8 +7,8 @@ import { useHistory, useParams } from "react-router-dom";
 import Empty from "../components/Empty";
 import ViewStuTc from "../components/ViewStuTc";
 import { store } from "react-notifications-component";
-import InfiniteScroll from "react-infinite-scroll-component";
 import useDebounce from "../utils/hooks/useDebounce";
+import { CSVLink } from "react-csv";
 
 export default function AllStList() {
   //get acDetails from Redux Store
@@ -116,6 +116,24 @@ export default function AllStList() {
     debounce(() => setsearch(search), 500);
   };
 
+  const csvFile = () => {
+    let cvData = [];
+    if (allstudent) {
+      allstudent.map((data, index) =>
+        cvData.push({
+          id: index + 1,
+          "First Name": '=""' + data.user.first_name + '""',
+          "Last Name": data.user.last_name,
+          "User Name": data.user.username,
+          "Telephone Number": '=""' + data.user.phone_no + '""',
+          Email: data.user.email,
+          Address: data.user.address,
+        })
+      );
+    }
+    return cvData;
+  };
+
   return (
     <div className="stlist">
       <ViewStuTc
@@ -128,9 +146,14 @@ export default function AllStList() {
         <h1>Enrolled Students</h1>
       </div>
       <div className="search_st">
-        <button onClick={back}>
-          <i className="fas fa-arrow-circle-left"></i> Back to Course
-        </button>
+        <div className="section">
+          <button onClick={back}>
+            <i className="fas fa-arrow-circle-left"></i> Back to Course
+          </button>
+          <CSVLink filename="Download_student_details.csv" data={csvFile()}>
+            Download Student Details
+          </CSVLink>
+        </div>
         <div className="search" onChange={handelSearchSubject}>
           <input type="text" />
           <button>
