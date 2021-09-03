@@ -14,6 +14,7 @@ import StMyCourses from "./StMyCourses";
 import { AnimatePresence, motion } from "framer-motion";
 import StSubCourses from "./StSubCourses";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import VideoEmbed from "../VideoEmbed";
 
 export default function StudentDashBoard() {
   const dispatch = useDispatch();
@@ -76,95 +77,101 @@ export default function StudentDashBoard() {
     },
   };
 
-  return (
-    <div className="main">
-      <div className={`main_column ${toggle ? "active" : ""}`}>
-        <StudentDashBoardHeader />
-      </div>
-      <div className="main_column">
-        <div className="head">
-          <div className="column">
-            <i onClick={togglemenu} className="fas fa-bars"></i>
-          </div>
-          <div className="column">
-            <div className="sec">
-              <span>
-                <i className="fas fa-expand" onClick={full}></i>
-              </span>
+  if (location.pathname.includes("studentdashboard/vimeo/embed")) {
+    return <VideoEmbed />;
+  } else {
+    return (
+      <div className="main">
+        <div className={`main_column ${toggle ? "active" : ""}`}>
+          <StudentDashBoardHeader />
+        </div>
+        <div className="main_column">
+          <div className="head">
+            <div className="column">
+              <i onClick={togglemenu} className="fas fa-bars"></i>
             </div>
-            <div className="sec">
-              <div
-                className="profile"
-                onClick={() => {
-                  settoggelProfile(!toggelProfile);
-                }}
-              >
-                <LazyLoadImage
-                  src={`${initialState && `${initialState.profile_pic}`}`}
-                  alt=""
-                  effect="blur"
-                />
-                <AnimatePresence exitBeforeEnter>
-                  {toggelProfile ? (
-                    <motion.div
-                      className={`drop_down ${toggelProfile ? "prActive" : ""}`}
-                      variants={pageAni}
-                      animate="visible"
-                      initial="hidden"
-                      exit="hidden"
-                    >
-                      <div
-                        className="drop_down_list"
-                        style={
-                          toggelProfile
-                            ? { display: "block" }
-                            : { display: "none" }
-                        }
+            <div className="column">
+              <div className="sec">
+                <span>
+                  <i className="fas fa-expand" onClick={full}></i>
+                </span>
+              </div>
+              <div className="sec">
+                <div
+                  className="profile"
+                  onClick={() => {
+                    settoggelProfile(!toggelProfile);
+                  }}
+                >
+                  <LazyLoadImage
+                    src={`${initialState && `${initialState.profile_pic}`}`}
+                    alt=""
+                    effect="blur"
+                  />
+                  <AnimatePresence exitBeforeEnter>
+                    {toggelProfile ? (
+                      <motion.div
+                        className={`drop_down ${
+                          toggelProfile ? "prActive" : ""
+                        }`}
+                        variants={pageAni}
+                        animate="visible"
+                        initial="hidden"
+                        exit="hidden"
                       >
-                        <ul>
-                          <Link to="/studentdashboard/studentprofile/">
-                            <li>
-                              <i className="far fa-user-circle"></i>Profile
+                        <div
+                          className="drop_down_list"
+                          style={
+                            toggelProfile
+                              ? { display: "block" }
+                              : { display: "none" }
+                          }
+                        >
+                          <ul>
+                            <Link to="/studentdashboard/studentprofile/">
+                              <li>
+                                <i className="far fa-user-circle"></i>Profile
+                              </li>
+                            </Link>
+                            <li onClick={hadelLogOut}>
+                              <i className="fas fa-sign-out-alt"></i>Log Out
                             </li>
-                          </Link>
-                          <li onClick={hadelLogOut}>
-                            <i className="fas fa-sign-out-alt"></i>Log Out
-                          </li>
-                        </ul>
-                      </div>
-                    </motion.div>
-                  ) : (
-                    ""
-                  )}
-                </AnimatePresence>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    ) : (
+                      ""
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="sub_column">
-          <Route path="/studentdashboard/maindashboard">
-            <StudentMainDashboard />
-          </Route>
-          <Route path="/studentdashboard/allsubjects/">
-            <StAllSubjects />
-          </Route>
-          <Route path="/studentdashboard/mycourses/">
-            <StMyCourses />
-          </Route>
-          <Route path="/studentdashboard/stcourses/:id">
-            <StCourses />
-          </Route>
-          <Route path="/studentdashboard/stmodules/:id">
-            <Stmodules />
-          </Route>
-          <Route path="/studentdashboard/studentprofile/">
-            <StProfile />
-          </Route>
-          <Route path="/studentdashboard/mycoursesforsubject/:id">
-            <StSubCourses />
-          </Route>
+          <div className="sub_column">
+            <Route path="/studentdashboard/maindashboard">
+              <StudentMainDashboard />
+            </Route>
+            <Route path="/studentdashboard/allsubjects/">
+              <StAllSubjects />
+            </Route>
+            <Route path="/studentdashboard/mycourses/">
+              <StMyCourses />
+            </Route>
+            <Route path="/studentdashboard/stcourses/:id">
+              <StCourses />
+            </Route>
+            <Route path="/studentdashboard/stmodules/:id">
+              <Stmodules />
+            </Route>
+            <Route path="/studentdashboard/studentprofile/">
+              <StProfile />
+            </Route>
+            <Route path="/studentdashboard/mycoursesforsubject/:id">
+              <StSubCourses />
+            </Route>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
