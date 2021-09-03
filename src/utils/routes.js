@@ -1,3 +1,5 @@
+import About from "../pages/About";
+import ContactUs from "../pages/ContactUs";
 import Home from "../pages/Home";
 import InAllSubjects from "../pages/InAllSubjects";
 import IndexAllTeachers from "../pages/IndexAllTeachers";
@@ -9,6 +11,7 @@ import PasswordReset from "../pages/PasswordReset";
 import Features from "../pages/Features";
 import Guideline from "../pages/Guideline";
 import NotFound from "../pages/NotFound";
+import VideoEmbed from "../pages/VideoEmbed";
 
 export default [
   {
