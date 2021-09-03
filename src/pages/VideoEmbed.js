@@ -8,6 +8,10 @@ function useQuery() {
 function VideoEmbed() {
   let query = useQuery();
   let id = query.get("video_id");
+  let src =
+    "https://player.vimeo.com/video/" +
+    id +
+    "?autoplay=1&title=0&byline=0&playsinline=0&autopause=0&responsive=1";
 
   if (!id) {
     return <NotFound />;
@@ -24,7 +28,7 @@ function VideoEmbed() {
   return (
     <div style={style}>
       <iframe
-        src="https://player.vimeo.com/video/90594364?title=0&byline=0&playsinline=0&autopause=0"
+        src={src}
         width="100%"
         height="100%"
         frameborder="0"
