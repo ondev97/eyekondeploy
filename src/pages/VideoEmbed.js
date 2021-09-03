@@ -24,13 +24,12 @@ function VideoEmbed() {
   return (
     <div style={style}>
       <iframe
-        src="https://player.vimeo.com/video/90594364?title=0&amp;byline=0&amp;portrait=0&amp;playsinline=0&amp;autopause=0&amp;app_id=122963&amp;h=fe9d29e6df"
-        width="100"
-        height="100"
+        src="https://player.vimeo.com/video/90594364?title=0&byline=0&playsinline=0&autopause=0"
+        width="100%"
+        height="100%"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
-        title="Portfolio Reel Alex"
         style={iframe}
       ></iframe>
     </div>
