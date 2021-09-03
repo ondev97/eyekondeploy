@@ -18,8 +18,11 @@ function VideoEmbed() {
   }
 
   let style = {
-    backgroundColor: "transport",
+    backgroundColor: "#282E48",
     margin: "0px",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
   };
   let iframe = {
     width: "100%",
