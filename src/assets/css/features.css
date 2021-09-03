@@ -83,7 +83,7 @@
     width: 90%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   .outer-box {
     flex-direction: column;
   }
@@ -91,6 +91,8 @@
     margin-right: 0;
     margin-bottom: -30px;
   }
+}
+@media screen and (max-width: 900px) {
   .outer-box .length-box {
     padding: 45px 20px;
   }
