@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import StLoginForm from "../components/StLoginForm";
 import logo from "../img/Logo_1.png";
 import { useDispatch } from "react-redux";
@@ -6,16 +6,22 @@ import { activeAccount } from "../actions";
 import "../assets/css/stlogin.css";
 import "../assets/css/mediaFiles/loginRegister.css";
 import { Link } from "react-router-dom";
+import SessionModel from "../components/SessionModel";
 
 export default function StLogin() {
   const dispatch = useDispatch();
+  const [isSession, setisSession] = useState(false);
 
   useEffect(() => {
     dispatch(activeAccount());
   }, [dispatch]);
-
+  console.log(isSession);
   return (
     <>
+      {
+        //clear login session otp
+        isSession ? <SessionModel setisSession={setisSession} /> : ""
+      }
       <div className="login_body">
         <div className="login_column">
           <div className="login_form">
@@ -26,7 +32,7 @@ export default function StLogin() {
                 Password නිවැරදිව සදහන් කර "Log In" මත click කරන්න.
               </p>
             </div>
-            <StLoginForm />
+            <StLoginForm setisSession={setisSession} />
           </div>
         </div>
         <div className="login_column">

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Link, Redirect } from "react-router-dom";
 import StValidateLogin from "../utils/hooks/StValidateLogin";
 
-export default function StLoginForm() {
+export default function StLoginForm({ setisSession }) {
   const [
     values,
     hadelOnChange,
@@ -95,6 +95,7 @@ export default function StLoginForm() {
             <p>
               <Link to="/passwordreset">Forgot Password?</Link>
             </p>
+            <p onClick={() => setisSession(true)}>Clear Login Session</p>
             {/* <p>
               <Link to="/stsignup">Don't You Have An Account?</Link>
             </p> */}

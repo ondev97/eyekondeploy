@@ -1,0 +1,114 @@
+.loginmodel_outer {
+  position: fixed;
+  background-color: #00000061;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginmodel_outer .loginmodel {
+  max-width: 700px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  position: relative;
+}
+.loginmodel_outer .loginmodel .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.loginmodel_outer .loginmodel .close button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+.loginmodel_outer .loginmodel .close button i {
+  user-select: none;
+  pointer-events: none;
+}
+.loginmodel_outer .loginmodel h1 {
+  font-size: 23px;
+  margin-bottom: 5px;
+  color: #ff9d00;
+}
+.loginmodel_outer .loginmodel h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.loginmodel_outer .loginmodel p {
+  position: relative;
+}
+.loginmodel_outer .loginmodel p .tip {
+  font-size: 11px;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  padding: 5px 8px;
+  background-color: rgba(251, 1, 1, 0.0784313725490196);
+  color: red;
+  border-radius: 2px;
+  z-index: 100;
+  transition: opacity 0.9s;
+  text-transform: capitalize;
+}
+.loginmodel_outer .loginmodel p .hidetip {
+  opacity: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.loginmodel_outer .loginmodel p label {
+  display: block;
+  margin-bottom: 3px;
+}
+.loginmodel_outer .loginmodel p input#un {
+  text-transform: uppercase;
+}
+.loginmodel_outer .loginmodel p input {
+  width: 100%;
+  padding: 8px 5px;
+  margin-bottom: 5px;
+  border: 1px solid #dadada;
+  outline: none;
+  transition: 0.3s ease;
+}
+.loginmodel_outer .loginmodel p input:hover {
+  border: 1px solid #ff9d00;
+}
+.loginmodel_outer .loginmodel button.otpsa {
+  width: 150px;
+  padding: 8px 5px;
+  background-color: #ff9d00;
+  color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ff9d00;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  outline: none;
+}
+.loginmodel_outer .loginmodel button.otpsa i {
+  color: #fff;
+  animation: rotate 0.3s infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@media screen and (max-width: 750px) {
+  .loginmodel_outer .loginmodel {
+    max-width: initial;
+    width: 95%;
+  }
+}
