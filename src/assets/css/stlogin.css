@@ -131,6 +131,7 @@
   font-size: 13px;
   font-weight: 500;
   color: #ff9d00;
+  cursor: pointer;
 }
 .login_body .login_column .login_form .but p a {
   text-decoration: none;

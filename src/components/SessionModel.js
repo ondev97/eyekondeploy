@@ -160,7 +160,11 @@ function SessionModel({ setisSession }) {
             )}
           </p>
           <button type="submit" className="otpsa" onClick={submitSession}>
-            <i className="fas fa-circle-notch rotate"></i>
+            {loading ? (
+              <i className="fas fa-circle-notch rotate"></i>
+            ) : (
+              "Clear Session"
+            )}
           </button>
         </div>
       </div>
