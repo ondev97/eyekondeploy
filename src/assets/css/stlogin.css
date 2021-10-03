@@ -127,6 +127,30 @@
   margin-right: 20px;
   margin-bottom: 5px;
 }
+.login_body .login_column .login_form .but button {
+  width: 130px;
+  background-color: #f8ab2e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  padding: 8px;
+  border: 1px solid transparent;
+}
+.login_body .login_column .login_form .but button i {
+  color: #fff;
+  margin-right: 3px;
+  animation: load 0.5s linear infinite;
+}
+@keyframes load {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 .login_body .login_column .login_form .but p {
   font-size: 13px;
   font-weight: 500;

@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { activeAccount } from "../actions";
 import "../assets/css/stlogin.css";
 import "../assets/css/mediaFiles/loginRegister.css";
-import { Link } from "react-router-dom";
 import SessionModel from "../components/SessionModel";
 
 export default function StLogin() {
@@ -15,7 +14,7 @@ export default function StLogin() {
   useEffect(() => {
     dispatch(activeAccount());
   }, [dispatch]);
-  console.log(isSession);
+
   return (
     <>
       {

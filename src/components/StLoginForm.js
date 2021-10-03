@@ -11,6 +11,7 @@ export default function StLoginForm({ setisSession }) {
     hideError,
     hide,
     acDetails,
+    loading,
   ] = StValidateLogin();
   const passwordRef = useRef();
 
@@ -89,7 +90,10 @@ export default function StLoginForm({ setisSession }) {
           </p>
         </div>
         <div className="but">
-          <input type="submit" value="Log In" name="submit" />
+          <button type="submit" name="submit">
+            {loading ? <i class="fas fa-circle-notch"></i> : ""}
+            Log In
+          </button>
 
           <div className="fpw">
             <p>
