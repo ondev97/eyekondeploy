@@ -12,6 +12,8 @@ import Features from "../pages/Features";
 import Guideline from "../pages/Guideline";
 import NotFound from "../pages/NotFound";
 import VideoEmbed from "../pages/VideoEmbed";
+import TermsAndConditions from "../pages/TermsAndConditions";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 export default [
   {
@@ -56,6 +58,14 @@ export default [
   {
     path: "/studentdashboard",
     components: () => <StudentDashBoard />,
+  },
+  {
+    path: "/termsandcondition",
+    components: () => <TermsAndConditions />,
+  },
+  {
+    path: "/privacypolicy",
+    components: () => <PrivacyPolicy />,
   },
   {
     path: "/passwordreset",

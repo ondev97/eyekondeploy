@@ -55,6 +55,12 @@ export default function Footer() {
               <li>
                 <Link to="/allsubjects">Subjects</Link>
               </li>
+              <li>
+                <Link to="/termsandcondition">Terms and Conditions</Link>
+              </li>
+              <li>
+                <Link to="/privacypolicy">Privacy Policy</Link>
+              </li>
             </ul>
           </div>
         </div>

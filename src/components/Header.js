@@ -125,6 +125,12 @@ export default function Header({ acDetails }) {
               <li>
                 <Link to="/allsubjects">SUBJECTS</Link>
               </li>
+              {/* <li>
+                <Link to="/termsandcondition">TERMS AND CONDITIONS</Link>
+              </li>
+              <li>
+                <Link to="/privacypolicy">PRIVACY POLICY</Link>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -172,6 +178,12 @@ export default function Header({ acDetails }) {
                 <Link to="/allsubjects">
                   <li>SUBJECTS</li>
                 </Link>
+                {/* <Link to="/termsandcondition">
+                  <li>TERMS AND CONDITIONS</li>
+                </Link>
+                <Link to="/privacypolicy">
+                  <li>PRIVACY POLICY</li>
+                </Link> */}
               </ul>
               <div className="butham">{headerProPic()}</div>
             </div>

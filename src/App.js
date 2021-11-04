@@ -27,6 +27,8 @@ function App() {
     "/passwordreset",
     "/features",
     "/guideline",
+    "/privacypolicy",
+    "/termsandcondition",
   ];
   let location = window.location.pathname;
 
