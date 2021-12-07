@@ -27,6 +27,7 @@ export default function Stmodules() {
   };
 
   useEffect(async () => {
+    window.scrollTo(0, 0);
     if (usDetails.key) {
       await Axios.get(
         `${process.env.REACT_APP_LMS_MAIN_URL}/course-api/getmodules/${id}/`,
