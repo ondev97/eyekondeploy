@@ -534,3 +534,42 @@
   width: 100%;
   filter: grayscale(32%);
 }
+
+/* model for banner */
+.modelBannerBg{
+  position: fixed;
+  background-color: #000000a6;
+  width: 100%;
+  height: 100%;
+  z-index: 2005;
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modelBannerBg .modelBannerInner{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+.modelBannerBg .modelBannerInner img{
+ width: 100%;
+}
+.modelBannerBg .modelBannerInner button{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+}
+.modelBannerBg .modelBannerInner button i{
+  font-size: 20px;
+  cursor: pointer;
+}

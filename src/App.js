@@ -7,13 +7,16 @@ import { useEffect, useState } from "react";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import Footer from "./components/Footer";
+import Banner from "./components/Banner";
 
 function App() {
   const accountDetails = useSelector((state) => state.accountDetails);
   const [acDetails, setacDetails] = useState("");
+  const [isBanner, setisBanner] = useState(false);
 
   useEffect(() => {
     setacDetails(accountDetails);
+    setisBanner(true);
   }, [accountDetails]);
 
   const mainRoute = [
@@ -44,6 +47,12 @@ function App() {
 
   return (
     <div className="App">
+      {/* model cover */}
+      {isBanner ? (
+        mainRoute.includes(location) ? (
+          <Banner setisBanner={setisBanner} />
+        ) : null
+      ) : null}
       <ReactNotification isMobile="true" />
       <Router>
         {headerRoute()}
