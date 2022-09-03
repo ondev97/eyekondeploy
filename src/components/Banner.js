@@ -1,4 +1,4 @@
-import introCover from "../img/introIsland.jpeg";
+import introCover from "../img/introIsland.jpg";
 
 function Banner({ setisBanner }) {
   //banner close function
