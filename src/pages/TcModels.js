@@ -74,6 +74,12 @@ export default function TcModels() {
     }
   });
 
+  const getYoutubeVId = (url) => {
+    let url_search = new URL(url);
+    let c = url_search.searchParams.get("v");
+    return `https://youtu.be/${c}`;
+  };
+
   return (
     <div>
       {setVideo ? (
@@ -91,8 +97,7 @@ export default function TcModels() {
               />
             }
             <ReactPlayer
-              url={videoLink}
-              controls={true}
+              url={getYoutubeVId(videoLink)}
               pip={true}
               className="player"
               width="100%"

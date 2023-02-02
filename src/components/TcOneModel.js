@@ -21,6 +21,12 @@ export default function TcOneModel({
   //get acDetails from Redux Store
   const usDetails = useSelector((state) => state.accountDetails);
 
+  const getYoutubeVId = (url) => {
+    let url_search = new URL(url);
+    let c = url_search.searchParams.get("v");
+    return `https://youtu.be/${c}`;
+  };
+
   //filtering message and embed react player
   function filterTags(nodes) {
     let media = [];
@@ -40,7 +46,9 @@ export default function TcOneModel({
                   media.push(
                     <div className="re_player" id="re_player" key={i}>
                       <UPlayerComponent
-                        url={nodes[i].props.children[x].props.url}
+                        url={getYoutubeVId(
+                          nodes[i].props.children[x].props.url
+                        )}
                         setvideoLink={setvideoLink}
                         setsetVideo={setsetVideo}
                       />
@@ -50,7 +58,9 @@ export default function TcOneModel({
                   media.push(
                     <div className="re_player" key={i}>
                       <ReactPlayer
-                        url={nodes[i].props.children[x].props.url}
+                        url={getYoutubeVId(
+                          nodes[i].props.children[x].props.url
+                        )}
                         controls={true}
                         pip={true}
                         className="player"

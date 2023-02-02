@@ -121,6 +121,12 @@ export default function Stmodules() {
     }
   };
 
+  const getYoutubeVId = (url) => {
+    let url_search = new URL(url);
+    let c = url_search.searchParams.get("v");
+    return `https://youtu.be/${c}`;
+  };
+
   return (
     <div>
       {setVideo ? (
@@ -138,8 +144,7 @@ export default function Stmodules() {
               />
             }
             <ReactPlayer
-              url={videoLink}
-              controls={true}
+              url={getYoutubeVId(videoLink)}
               pip={true}
               className="player"
               width="100%"
