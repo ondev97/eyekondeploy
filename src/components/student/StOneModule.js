@@ -17,7 +17,7 @@ export default function StOneModule({
   const getYoutubeVId = (url) => {
     let url_search = new URL(url);
     let c = url_search.searchParams.get("v");
-    if (url.includes("youtu")) return `https://youtu.be/${c}`;
+    if (url.includes("youtu") && c !== null) return `https://youtu.be/${c}`;
     return url;
   };
   //filtering message and embed react player
