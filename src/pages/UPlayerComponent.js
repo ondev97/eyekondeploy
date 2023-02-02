@@ -19,17 +19,11 @@ function UPlayerComponent({ url, setvideoLink, setsetVideo }) {
     setsetVideo(true);
     setplaying(false);
   };
-
-  const getYoutubeVId = (url) => {
-    let url_search = new URL(url);
-    let c = url_search.searchParams.get("v");
-    return `https://youtu.be/${c}`;
-  };
   return (
     <>
       <div className="player_overlay" onClick={playPush}></div>
       <ReactPlayer
-        url={getYoutubeVId(url)}
+        url={url}
         controls={true}
         pip={true}
         className="player"

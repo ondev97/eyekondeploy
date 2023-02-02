@@ -24,7 +24,8 @@ export default function TcOneModel({
   const getYoutubeVId = (url) => {
     let url_search = new URL(url);
     let c = url_search.searchParams.get("v");
-    return `https://youtu.be/${c}`;
+    if (url.includes("youtu")) return `https://youtu.be/${c}`;
+    return url;
   };
 
   //filtering message and embed react player
@@ -58,9 +59,7 @@ export default function TcOneModel({
                   media.push(
                     <div className="re_player" key={i}>
                       <ReactPlayer
-                        url={getYoutubeVId(
-                          nodes[i].props.children[x].props.url
-                        )}
+                        url={nodes[i].props.children[x].props.url}
                         controls={true}
                         pip={true}
                         className="player"
